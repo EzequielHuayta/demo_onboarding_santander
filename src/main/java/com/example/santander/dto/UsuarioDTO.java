@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsuarioDTO {
@@ -14,4 +12,5 @@ public class UsuarioDTO {
     @JsonIgnore
     private String Contrasenia;
     private String nombre;
+    private int id;
 }
