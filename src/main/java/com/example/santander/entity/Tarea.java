@@ -1,16 +1,14 @@
 package com.example.santander.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -33,4 +31,7 @@ public class Tarea {
 
     @NotNull
     private int idUsuario;
+
+    @ManyToMany(mappedBy = "tareas")
+    private Set<Usuario> usuarios;
 }

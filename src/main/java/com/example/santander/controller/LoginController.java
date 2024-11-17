@@ -23,20 +23,21 @@ public class LoginController {
     public ResponseEntity login(@RequestHeader Map<String, String> headers) {
 
         String legajo = headers.get("legajo");
-        String contraseña = headers.get("password");
+        String Contrasenia = headers.get("password");
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
         usuarioDTO.setLegajo(legajo);
-        usuarioDTO.setContraseña(contraseña);
+        usuarioDTO.setContrasenia(Contrasenia);
 
         log.debug("Llamando al SERVICIO de login - legajo: {}", legajo);
 
-        ResponseDTO<UsuarioDTO> data = new ResponseDTO();
+        ResponseDTO<UsuarioDTO> data = new ResponseDTO<>();
+
+        data.setData(usuarioService.autenticarUsuario(usuarioDTO));
 
 
-        if (usuarioService.autenticarUsuario(usuarioDTO)) {
+        if (data.getData() != null) {
             log.info("legajo: {} logueado con exito", legajo);
-
             return new ResponseEntity<>(data, HttpStatus.OK);
         } else {
             log.warn("legajo: {} usuario no autenticado", usuarioDTO.getLegajo());

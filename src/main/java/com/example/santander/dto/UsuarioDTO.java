@@ -10,6 +10,6 @@ import lombok.*;
 @AllArgsConstructor
 public class UsuarioDTO {
     private String legajo;
-    private String contraseña;
+    private String Contrasenia;
     private String nombre;
 }

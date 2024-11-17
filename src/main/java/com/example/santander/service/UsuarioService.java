@@ -6,6 +6,6 @@ import com.example.santander.exceptions.UsuarioNotFoundException;
 
 public interface UsuarioService {
 
-    boolean autenticarUsuario(UsuarioDTO usuarioDTO) throws UsuarioNotFoundException;
+    UsuarioDTO autenticarUsuario(UsuarioDTO usuarioDTO) throws UsuarioNotFoundException;
 
 }

@@ -17,18 +17,28 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public boolean autenticarUsuario(UsuarioDTO usuarioDTO) {
+    public UsuarioDTO autenticarUsuario(UsuarioDTO usuarioDTO) {
 
         String legajo = usuarioDTO.getLegajo();
-        String password = usuarioDTO.getContraseña();
-
+        String password = usuarioDTO.getContrasenia();
 
         Usuario usuario = usuarioRepository.findByLegajo(legajo);
 
-        //Si no se encuentra el usuario o si la contraseña del usuario encontrado no es valido devuelvo una respuesta usuario no encontrado
-        if (usuario == null || !usuario.getContraseña().equals(password)) {
-            throw new UsuarioNotFoundException("Usuario no encontrado o contraseña incorrecta");
+        //Si no se encuentra el usuario o si la Contrasenia del usuario encontrado no es valido devuelvo una respuesta usuario no encontrado
+        if (usuario == null || !usuario.getContrasenia().equals(password)) {
+            throw new UsuarioNotFoundException("Usuario no encontrado o Contrasenia incorrecta");
         }
-        return true;
+
+        UsuarioDTO usuarioDTO1 = new UsuarioDTO();
+        usuarioDTO1.setLegajo(usuario.getLegajo());
+        usuarioDTO1.setContrasenia(usuario.getContrasenia());
+        usuarioDTO1.setNombre(usuario.getNombre());
+
+        return usuarioDTO1;
+
+
+
+
+
     }
 }
