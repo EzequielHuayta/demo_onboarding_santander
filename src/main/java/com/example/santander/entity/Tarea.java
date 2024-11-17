@@ -20,16 +20,13 @@ public class Tarea {
     @Id
     @GeneratedValue
     private int id;
-
-    @NotNull
-    private boolean finalizado;
-
+    
     @NotNull
     private String descripcion;
 
     private Date fechaFin;
 
 
-    @ManyToMany(mappedBy = "tareas")
-    private Set<Usuario> usuarios;
+    @OneToMany(mappedBy = "tarea")
+    private Set<TareaDetalle> tareaDetalles;
 }

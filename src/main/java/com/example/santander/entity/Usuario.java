@@ -30,11 +30,6 @@ public class Usuario {
     String contrasenia;
 
 
-    @ManyToMany
-    @JoinTable(
-            name = "usuario_tarea",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "tarea_id")
-    )
-    private Set<Tarea> tareas;
+    @OneToMany(mappedBy = "usuario")
+    private Set<TareaDetalle> tareaDetalles;
 }
