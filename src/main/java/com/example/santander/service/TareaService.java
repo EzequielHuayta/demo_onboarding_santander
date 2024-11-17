@@ -1,10 +1,10 @@
-package service;
+package com.example.santander.service;
 
 
-import entity.Tarea;
+import com.example.santander.entity.Tarea;
+import com.example.santander.repository.TareaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.TareaRepository;
 
 import java.util.List;
 

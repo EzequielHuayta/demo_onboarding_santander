@@ -1,4 +1,4 @@
-package dto;
+package com.example.santander.dto;
 
 
 import lombok.*;
@@ -11,4 +11,5 @@ import lombok.*;
 public class UsuarioDTO {
     private String legajo;
     private String contraseña;
+    private String nombre;
 }

@@ -1,9 +1,11 @@
-package repository;
+package com.example.santander.repository;
 
-import entity.Usuario;
+import com.example.santander.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    Usuario findByLegajo(String legajo);
 
 
 }
