@@ -29,12 +29,11 @@ public class UsuarioServiceImpl implements UsuarioService {
             throw new UsuarioNotFoundException("Usuario no encontrado o Contrasenia incorrecta");
         }
 
-        UsuarioDTO usuarioDTO1 = new UsuarioDTO();
-        usuarioDTO1.setLegajo(usuario.getLegajo());
-        usuarioDTO1.setContrasenia(usuario.getContrasenia());
-        usuarioDTO1.setNombre(usuario.getNombre());
+        UsuarioDTO usuarioResponse = new UsuarioDTO();
+        usuarioResponse.setLegajo(usuario.getLegajo());
+        usuarioResponse.setNombre(usuario.getNombre());
 
-        return usuarioDTO1;
+        return usuarioResponse;
 
 
 

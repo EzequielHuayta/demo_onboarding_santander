@@ -20,7 +20,7 @@ public class Tarea {
     @Id
     @GeneratedValue
     private int id;
-    
+
     @NotNull
     private String descripcion;
 
