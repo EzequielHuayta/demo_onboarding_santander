@@ -29,8 +29,6 @@ public class Tarea {
 
     private Date fechaFin;
 
-    @NotNull
-    private int idUsuario;
 
     @ManyToMany(mappedBy = "tareas")
     private Set<Usuario> usuarios;
