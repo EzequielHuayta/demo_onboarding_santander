@@ -32,6 +32,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         UsuarioDTO usuarioResponse = new UsuarioDTO();
         usuarioResponse.setLegajo(usuario.getLegajo());
         usuarioResponse.setNombre(usuario.getNombre());
+        usuarioResponse.setApellido(usuario.getApellido());
 
         return usuarioResponse;
 

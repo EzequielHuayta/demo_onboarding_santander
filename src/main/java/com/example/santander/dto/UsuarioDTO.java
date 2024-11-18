@@ -10,7 +10,8 @@ import lombok.*;
 public class UsuarioDTO {
     private String legajo;
     @JsonIgnore
-    private String Contrasenia;
+    private String contrasenia;
     private String nombre;
+    private String apellido;
     private int id;
 }

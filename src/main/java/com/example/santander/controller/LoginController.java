@@ -23,11 +23,11 @@ public class LoginController {
     public ResponseEntity login(@RequestHeader Map<String, String> headers) {
 
         String legajo = headers.get("legajo");
-        String Contrasenia = headers.get("password");
+        String contrasenia = headers.get("password");
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
         usuarioDTO.setLegajo(legajo);
-        usuarioDTO.setContrasenia(Contrasenia);
+        usuarioDTO.setContrasenia(contrasenia);
 
         log.debug("Llamando al SERVICIO de login - legajo: {}", legajo);
 

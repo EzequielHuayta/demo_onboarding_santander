@@ -34,7 +34,7 @@ public class TareaServiceImpl implements TareaService {
         List<TareaDetalle> tareaDetalles = tareaDetalleRepository.findByUsuarioId(usuario.getId());
         List<TareaDTO> listTareaDTO = new ArrayList<>();
 
-      
+
         tareaDetalles.forEach(tareaDetalle -> {
             Tarea tarea = tareaDetalle.getTarea();
             TareaDTO tareaDTO = new TareaDTO();
