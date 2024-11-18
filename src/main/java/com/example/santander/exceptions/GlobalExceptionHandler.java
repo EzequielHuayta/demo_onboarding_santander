@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public @ResponseBody ErrorResponse handleException(Exception e) {
-        log.error("Error de servidor: ", e.getMessage());
+        log.error("Error de servidor: " + e.getMessage());
 
         return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
     }
