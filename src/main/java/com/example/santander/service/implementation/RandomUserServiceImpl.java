@@ -17,7 +17,7 @@ public class RandomUserServiceImpl implements RandomUserService {
 
     @Autowired
     private RandomUserRepository randomUserRepository;
-    
+
     @Override
     public List<Result> obtenerAmigos() {
         String url = "https://randomuser.me/api/?results=2&inc=name,email&nat=es";
