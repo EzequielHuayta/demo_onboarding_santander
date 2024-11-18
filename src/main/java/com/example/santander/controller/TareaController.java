@@ -37,6 +37,8 @@ public class TareaController {
         List<TareaDTO> tareas = tareaService.findTareasByUserId(usuarioDTO);
 
         ResponseDTO<List<TareaDTO>> data = new ResponseDTO<>(tareas);
+        log.info("Response data: {}", data.getData());
+
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
 }
