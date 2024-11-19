@@ -10,10 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +22,7 @@ public class TareaController {
 
     @Autowired
     private TareaService tareaService;
-    @RequestMapping(value = "/tarea", produces ="application/json")
+    @GetMapping(value = "/tarea", produces ="application/json")
     public ResponseEntity<ResponseDTO<List<TareaDTO>>> tarea(@RequestHeader Map<String, String> headers) {
         log.info("Llamando al servicio de tareas para el legajo {}: ", headers.get("legajo"));
 
